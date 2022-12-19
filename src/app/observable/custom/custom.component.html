@@ -1,6 +1,5 @@
 <div class="my-3">
   <h2>Custom Observable</h2>
-  <br />
   <hr />
   <div class="row">
     <div class="col-md-6">
@@ -55,7 +54,13 @@
             : 'text-bg-primary'
         "
         class="badge"
-        >{{namesStatus === 'completed' ? 'Success' : namesStatus === 'error' ? 'Error' : 'Running'}}</span
+        >{{
+          namesStatus === 'completed'
+            ? 'Success'
+            : namesStatus === 'error'
+            ? 'Error'
+            : 'Running'
+        }}</span
       >
     </div>
   </div>
