@@ -19,13 +19,19 @@
       ></ul>
     </div>
     <div class="col-md-6">
-      <strong>Ex. 1 (Custom Interval Observable)</strong>
+      <strong>Ex. 2 (Custom Interval Observable)</strong>
       <hr />
-      <ul class="techList">
-        <li>Angular</li>
-        <li>HTML</li>
-        <li>CSS</li>
-      </ul>
+      <ul
+        [ngClass]="
+          techStatus2 === 'completed'
+            ? 'completed'
+            : techStatus2 === 'error'
+            ? 'error'
+            : ''
+        "
+        class="techList"
+        id="elContainer2"
+      ></ul>
     </div>
   </div>
   <br />

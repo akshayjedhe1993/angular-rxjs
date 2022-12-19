@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { DesignUtilityService } from '../../appServices/design-utility.service';
 
 @Component({
@@ -7,8 +7,10 @@ import { DesignUtilityService } from '../../appServices/design-utility.service';
   templateUrl: './custom.component.html',
   styleUrls: ['./custom.component.css'],
 })
-export class CustomComponent implements OnInit {
+export class CustomComponent implements OnInit, OnDestroy {
   techStatus;
+  techStatus2;
+  subs2: Subscription;
   constructor(private _designUtility: DesignUtilityService) {}
 
   ngOnInit() {
@@ -19,17 +21,17 @@ export class CustomComponent implements OnInit {
       }, 1000);
       setTimeout(() => {
         observer.next('JavaScript');
+        // observer.error(new Error('limit exceed'));
       }, 2000);
       setTimeout(() => {
         observer.next('TypeScript');
+        observer.complete();
       }, 3000);
       setTimeout(() => {
         observer.next('HTML');
-        // observer.error(new Error('limit exceed'));
       }, 4000);
       setTimeout(() => {
         observer.next('CSS');
-        observer.complete();
       }, 5000);
     });
 
@@ -46,5 +48,40 @@ export class CustomComponent implements OnInit {
     );
 
     // .subscribe(data, error, completion)
+
+    //   Ex.2 (Custom Interval Observable)
+    const arr2 = ['Angular', 'TypeScript', 'JavaScript', 'HTML', 'CSS'];
+    const cusObs2 = Observable.create((observer) => {
+      let count = 0;
+      setInterval(() => {
+        observer.next(arr2[count]);
+
+        if (count >= 3) {
+          observer.error('error emit.');
+        }
+        if (count >= 4) {
+          observer.complete();
+        }
+        count++;
+      }, 1000);
+    });
+
+    this.subs2 = cusObs2.subscribe(
+      (data) => {
+        this._designUtility.print(data, 'elContainer2');
+      },
+      (error) => {
+        this.techStatus2 = 'error';
+      },
+      () => {
+        this.techStatus2 = 'completed';
+      }
+    );
+
+    //   Ex.3 (Ramdom Names)
+  }
+
+  ngOnDestroy() {
+    this.subs2.unsubscribe();
   }
 }
