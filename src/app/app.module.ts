@@ -12,6 +12,7 @@ import { FromEventComponent } from './observable/from-event/from-event.component
 import { IntervalComponent } from './observable/interval/interval.component';
 import { OfFromComponent } from './observable/of-from/of-from.component';
 import { ToArrayComponent } from './observable/to-array/to-array.component';
+import { CustomComponent } from './observable/custom/custom.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule],
@@ -25,6 +26,7 @@ import { ToArrayComponent } from './observable/to-array/to-array.component';
     IntervalComponent,
     OfFromComponent,
     ToArrayComponent,
+    CustomComponent,
   ],
   bootstrap: [AppComponent],
 })
