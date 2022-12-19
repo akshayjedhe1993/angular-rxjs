@@ -1,2 +1,28 @@
 /* Add application styles & imports to this file! */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
+ul.techList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.techList li {
+  padding: 7px 13px;
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+ul.techList.error li {
+  color: #ff0000;
+  background: #ff000014;
+  border-color: #ff0000;
+}
+
+ul.techList.completed li {
+  color: #008000;
+  background: #00800014;
+  border-color: #008000;
+}

@@ -8,9 +8,9 @@
       <hr />
       <ul
         [ngClass]="
-          techStatus == 'completed'
+          techStatus === 'completed'
             ? 'completed'
-            : techStatus == 'error'
+            : techStatus === 'error'
             ? 'error'
             : ''
         "
