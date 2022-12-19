@@ -10,6 +10,8 @@ import { DesignUtilityService } from '../../appServices/design-utility.service';
 export class CustomComponent implements OnInit, OnDestroy {
   techStatus;
   techStatus2;
+  names;
+  namesStatus;
   subs2: Subscription;
   constructor(private _designUtility: DesignUtilityService) {}
 
@@ -56,7 +58,7 @@ export class CustomComponent implements OnInit, OnDestroy {
       setInterval(() => {
         observer.next(arr2[count]);
 
-        if (count >= 3) {
+        if (count >= 2) {
           observer.error('error emit.');
         }
         if (count >= 4) {
@@ -79,6 +81,33 @@ export class CustomComponent implements OnInit, OnDestroy {
     );
 
     //   Ex.3 (Ramdom Names)
+    const arr3 = ['Akshay', 'Gajanan', 'Jedhe', 'Pooja', 'Temp'];
+    const cusObs3 = Observable.create((observer) => {
+      let count = 0;
+      setInterval(() => {
+        observer.next(arr3[count]);
+
+        if (count >= 2) {
+          // observer.error('error emit.');
+        }
+        if (count >= 4) {
+          observer.complete();
+        }
+        count++;
+      }, 1000);
+    });
+
+    cusObs3.subscribe(
+      (data) => {
+        this.names = data;
+      },
+      (error) => {
+        this.namesStatus = 'error';
+      },
+      () => {
+        this.namesStatus = 'completed';
+      }
+    );
   }
 
   ngOnDestroy() {

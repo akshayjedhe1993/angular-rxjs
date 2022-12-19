@@ -39,14 +39,24 @@
     <div class="col-md-12">
       <p class="border rounded bg-light py-2 px-3">
         <strong>Random Names: </strong>
-        'Akshay', 'Gajanan', 'Jedhe'
+        'Akshay', 'Gajanan', 'Jedhe', 'Pooja', 'Temp'
       </p>
       <hr />
       <p>
-        <strong class="text-success">Current Names: </strong>
-        'Akshay', 'Gajanan', 'Jedhe'
+        Current Names:
+        <strong>{{ names }}</strong>
       </p>
-      <span class="badge text-bg-success">Success</span>
+      <span
+        [ngClass]="
+          namesStatus === 'completed'
+            ? 'text-bg-success'
+            : namesStatus === 'error'
+            ? 'text-bg-danger'
+            : 'text-bg-primary'
+        "
+        class="badge"
+        >{{namesStatus === 'completed' ? 'Success' : namesStatus === 'error' ? 'Error' : 'Running'}}</span
+      >
     </div>
   </div>
 </div>
