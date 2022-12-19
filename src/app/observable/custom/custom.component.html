@@ -6,11 +6,17 @@
     <div class="col-md-6">
       <strong>Ex. 1 (Manual)</strong>
       <hr />
-      <ul class="techList">
-        <li>Angular</li>
-        <li>HTML</li>
-        <li>CSS</li>
-      </ul>
+      <ul
+        [ngClass]="
+          techStatus == 'completed'
+            ? 'completed'
+            : techStatus == 'error'
+            ? 'error'
+            : ''
+        "
+        class="techList"
+        id="elContainer1"
+      ></ul>
     </div>
     <div class="col-md-6">
       <strong>Ex. 1 (Custom Interval Observable)</strong>
