@@ -1,25 +1,52 @@
 <div class="my-3">
   <h2>Retry, RetryWhen, Scan and Delay</h2>
   <hr />
-  <p class="bg-light d-inline-block py-2 px-3 border">
-    Random Names: 'Akshay', 'Gajanan', 'Jedhe', 'Angular', 'NC', 'FE'
-  </p>
-  <hr />
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <strong>Ex.1 | Retry</strong>
       <hr />
-      <ul id="elContainer1"></ul>
-    </div>
-    <div class="col-md-4">
-      <strong>Ex.2 | RetryWhen</strong>
-      <hr />
-      <ul id="elContainer2"></ul>
-    </div>
-    <div class="col-md-4">
-      <strong>Ex.3 | Scan and Delay</strong>
-      <hr />
-      <ul id="elContainer3"></ul>
+      <table class="table" *ngIf="data != null">
+        <tr>
+          <th>Id</th>
+          <td>{{ data.id }}</td>
+        </tr>
+        <tr>
+          <th>User Id</th>
+          <td>{{ data.userId }}</td>
+        </tr>
+        <tr>
+          <th>Title</th>
+          <td>{{ data.title }}</td>
+        </tr>
+        <tr>
+          <th>Body</th>
+          <td>{{ data.body }}</td>
+        </tr>
+      </table>
+      <button class="btn btn-primary" type="button" (click)="fetchDetails()">
+        <span
+          *ngIf="fetching"
+          class="spinner-border spinner-border-sm"
+          role="status"
+          aria-hidden="true"
+        ></span>
+        {{ fetching ? 'Fetching...' : 'Fetch Details' }}
+      </button>
+      <br />
+      <br />
+      <p>
+        Status:
+        <strong
+          [ngClass]="{
+            'text-success': status == 'Data fetched',
+            'text-danger': status == 'Problem fetching data'
+          }"
+          >{{ status }}</strong
+        >
+        <span *ngIf="fetching" class="spinner-grow text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </span>
+      </p>
     </div>
   </div>
 </div>
