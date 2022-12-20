@@ -9,6 +9,7 @@ import { DesignUtilityService } from '../../appServices/design-utility.service';
   styleUrls: ['./tap.component.css'],
 })
 export class TapComponent implements OnInit {
+  myColor: string;
   constructor(private _du: DesignUtilityService) {}
 
   ngOnInit() {
@@ -29,25 +30,35 @@ export class TapComponent implements OnInit {
         // tap((data) => console.log('Tap after ' + data))
       )
       .subscribe((res) => {
-        console.log(res);
+        // console.log(res);
         this._du.print(res, 'elContainer');
       });
 
     //  Ex.2
-    const colors = ['Red', 'Blue', 'Orange'];
+    const colors = [
+      'Red',
+      'Blue',
+      'Orange',
+      'Pink',
+      'Black',
+      'Yellow',
+      'Purple',
+      'Green',
+    ];
     let obserableSubscription2: Subscription;
     obserableSubscription2 = source
       .pipe(
         tap((data) => {
-          console.log('Tap ' + data);
-          if (data == 2) {
-            obserableSubscription.unsubscribe();
+          // console.log('Tap ' + data);
+          this.myColor = colors[data];
+          if (data == 8) {
+            obserableSubscription2.unsubscribe();
           }
         }),
         map((data) => colors[data])
       )
       .subscribe((res) => {
-        console.log(res);
+        // console.log(res);
         this._du.print(res, 'elContainer2');
       });
   }
