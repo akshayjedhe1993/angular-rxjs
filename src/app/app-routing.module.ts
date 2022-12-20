@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CustomComponent } from './observable/custom/custom.component';
+import { DebounceTimeComponent } from './observable/debounce-time/debounce-time.component';
 import { FilterComponent } from './observable/filter/filter.component';
 import { FromEventComponent } from './observable/from-event/from-event.component';
 import { IntervalComponent } from './observable/interval/interval.component';
@@ -33,6 +34,7 @@ const routes: Routes = [
       { path: 'tap', component: TapComponent },
       { path: 'take', component: TakeComponent },
       { path: 'retry', component: RetryComponent },
+      { path: 'debounce', component: DebounceTimeComponent },
     ],
   },
   { path: '**', redirectTo: 'observable' },
