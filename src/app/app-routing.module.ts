@@ -33,7 +33,7 @@ const routes: Routes = [
       { path: 'take', component: TakeComponent },
     ],
   },
-  { path: '**', redirectTo: 'promise' },
+  { path: '**', redirectTo: 'observable' },
 ];
 
 @NgModule({
