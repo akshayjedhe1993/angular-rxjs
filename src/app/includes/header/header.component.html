@@ -3,8 +3,13 @@
   style="background-color: #084298 !important"
 >
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">NgRX</a>
-    <button
+    <a class="navbar-brand" href="#">
+      <strong>
+        RXJS
+        <span *ngIf="exclusive" class="badge text-bg-primary">Exclusive</span>
+      </strong>
+    </a>
+    <button (click)="onNavToggle()"
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
@@ -15,7 +20,7 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse" [class.show]="navOpen" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link" routerLinkActive="active" routerLink="/promise"
           >Promise</a
