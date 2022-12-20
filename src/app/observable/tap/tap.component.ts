@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { interval } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { DesignUtilityService } from '../../appServices/design-utility.service';
 
 @Component({
   selector: 'app-tap',
@@ -8,7 +9,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./tap.component.css'],
 })
 export class TapComponent implements OnInit {
-  constructor() {}
+  constructor(private _du: DesignUtilityService) {}
 
   ngOnInit() {
     //  Ex.1
@@ -16,6 +17,7 @@ export class TapComponent implements OnInit {
     const source = interval(1500);
     source.pipe(map((data) => arr[data])).subscribe((res) => {
       console.log(res);
+      this._du.print(res, 'elContainer');
     });
   }
 }
