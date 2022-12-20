@@ -2,34 +2,56 @@
   <h2>Filter</h2>
   <hr />
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <strong>Ex.1</strong>
       <hr />
       <p class="border rounded bg-light py-2 px-3">
-        <strong>Pluck: </strong>By Property
+        <strong>Filter: </strong>By Length
       </p>
       <br />
       <table class="table">
         <tr>
+          <th>Id</th>
           <th>Name</th>
         </tr>
         <tr *ngFor="let item of data">
           <td>{{ item }}</td>
+          <td>{{ item }}</td>
         </tr>
       </table>
     </div>
-    <div class="col-md-6">
-      <strong>Ex.2</strong>
+    <div class="col-md-4">
+      <strong>Ex.1</strong>
       <hr />
       <p class="border rounded bg-light py-2 px-3">
-        <strong>Pluck: </strong>By nested property
+        <strong>Filter: </strong>By Gender
       </p>
       <br />
       <table class="table">
         <tr>
-          <th>Job Title</th>
+          <th>Id</th>
+          <th>Name</th>
         </tr>
-        <tr *ngFor="let item of data2">
+        <tr *ngFor="let item of data">
+          <td>{{ item }}</td>
+          <td>{{ item }}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-4">
+      <strong>Ex.3</strong>
+      <hr />
+      <p class="border rounded bg-light py-2 px-3">
+        <strong>Filter: </strong>By nth Item
+      </p>
+      <br />
+      <table class="table">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+        </tr>
+        <tr *ngFor="let item of data">
+          <td>{{ item }}</td>
           <td>{{ item }}</td>
         </tr>
       </table>
