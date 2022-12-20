@@ -12,20 +12,21 @@ export class TapComponent implements OnInit {
   constructor(private _du: DesignUtilityService) {}
 
   ngOnInit() {
+    const source = interval(1500);
+
     //  Ex.1
     const arr = ['Akshay', 'Gajanan', 'Jedhe'];
-    const source = interval(1500);
     let obserableSubscription: Subscription;
     obserableSubscription = source
       .pipe(
         tap((data) => {
-          console.log('Tap before ' + data);
+          // console.log('Tap before ' + data);
           if (data == 3) {
             obserableSubscription.unsubscribe();
           }
         }),
-        map((data) => arr[data]),
-        tap((data) => console.log('Tap after ' + data))
+        map((data) => arr[data])
+        // tap((data) => console.log('Tap after ' + data))
       )
       .subscribe((res) => {
         console.log(res);
@@ -33,5 +34,21 @@ export class TapComponent implements OnInit {
       });
 
     //  Ex.2
+    const colors = ['Red', 'Blue', 'Orange'];
+    let obserableSubscription2: Subscription;
+    obserableSubscription2 = source
+      .pipe(
+        tap((data) => {
+          console.log('Tap ' + data);
+          if (data == 2) {
+            obserableSubscription.unsubscribe();
+          }
+        }),
+        map((data) => colors[data])
+      )
+      .subscribe((res) => {
+        console.log(res);
+        this._du.print(res, 'elContainer2');
+      });
   }
 }
