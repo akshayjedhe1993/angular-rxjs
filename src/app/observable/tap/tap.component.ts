@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { DesignUtilityService } from '../../appServices/design-utility.service';
 
 @Component({
@@ -18,12 +18,12 @@ export class TapComponent implements OnInit {
     let obserableSubscription: Subscription;
     obserableSubscription = source
       .pipe(
-        map((data) => {
-          arr[data];
-          if (data == 4) {
+        tap((data) => {
+          if (data == 3) {
             obserableSubscription.unsubscribe();
           }
-        })
+        }),
+        map((data) => arr[data])
       )
       .subscribe((res) => {
         console.log(res);
