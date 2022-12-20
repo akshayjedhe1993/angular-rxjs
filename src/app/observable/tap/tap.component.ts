@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { interval } from 'rxjs';
+import { interval, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { DesignUtilityService } from '../../appServices/design-utility.service';
 
@@ -15,9 +15,19 @@ export class TapComponent implements OnInit {
     //  Ex.1
     const arr = ['Akshay', 'Gajanan', 'Jedhe'];
     const source = interval(1500);
-    source.pipe(map((data) => arr[data])).subscribe((res) => {
-      console.log(res);
-      this._du.print(res, 'elContainer');
-    });
+    let obserableSubscription: Subscription;
+    obserableSubscription = source
+      .pipe(
+        map((data) => {
+          arr[data];
+          if (data == 4) {
+            obserableSubscription.unsubscribe();
+          }
+        })
+      )
+      .subscribe((res) => {
+        console.log(res);
+        this._du.print(res, 'elContainer');
+      });
   }
 }
