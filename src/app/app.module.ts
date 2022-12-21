@@ -21,6 +21,7 @@ import { TakeComponent } from './observable/take/take.component';
 import { RetryComponent } from './observable/retry/retry.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DebounceTimeComponent } from './observable/debounce-time/debounce-time.component';
+import { SubjectComponent } from './observable/subject/subject.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
@@ -42,6 +43,7 @@ import { DebounceTimeComponent } from './observable/debounce-time/debounce-time.
     TakeComponent,
     RetryComponent,
     DebounceTimeComponent,
+    SubjectComponent,
   ],
   bootstrap: [AppComponent],
 })

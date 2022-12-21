@@ -13,9 +13,9 @@ export class HeaderComponent implements OnInit {
   constructor(private _du: DesignUtilityService) {}
 
   ngOnInit() {
-    this._du.exclusive.subscribe(res => {
-      // this.exclusive = res;
-    })
+    this._du.exclusive.subscribe((res) => {
+      this.exclusive = res;
+    });
   }
 
   onNavToggle() {

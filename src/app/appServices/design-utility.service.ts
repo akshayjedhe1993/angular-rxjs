@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class DesignUtilityService {
-  exclusive = new Subject();
+  exclusive = new Subject<boolean>();
 
   constructor() {}
 
