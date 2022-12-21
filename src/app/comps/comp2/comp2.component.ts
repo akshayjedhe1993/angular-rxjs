@@ -9,7 +9,11 @@ import { DesignUtilityService } from '../../appServices/design-utility.service';
 export class Comp2Component implements OnInit {
   username: string = 'Akshay';
 
-  constructor(private _designUtility: DesignUtilityService) {}
+  constructor(private _designUtility: DesignUtilityService) {
+    this._designUtility.userName.subscribe((res) => {
+      this.username = res;
+    });
+  }
 
   ngOnInit() {}
 
