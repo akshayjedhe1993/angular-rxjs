@@ -2,8 +2,62 @@
   <h2>Replay Subject</h2>
   <hr />
   <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4"></div>
-    <div class="col-md-4"></div>
+    <div class="col">
+      <h3>{{ methodInterval ? 'Interval Started' : 'Add Video' }}</h3>
+    </div>
+    <div class="col text-right">
+      <button class="btn btn-warning" (click)="toggleMethod()">
+        Toggle Method
+      </button>
+    </div>
+  </div>
+  <hr />
+  <div *ngIf="!methodInterval" class="row justify-content-center">
+    <div class="col-md-4">
+      <input type="text" class="form-control" #video />
+    </div>
+    <div class="col-md-3">
+      <button class="btn btn-success" (click)="onVideoAdd(video)">
+        Add Video
+      </button>
+    </div>
+  </div>
+  <hr *ngIf="!methodInterval" />
+  <div class="row">
+    <div class="col-md-4">
+      <strong>User 1</strong>
+      <hr />
+      <ul class="video-list">
+        <li *ngFor="let i1 of user1List"><strong>Video: </strong>{{ i1 }}</li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <strong>User 2</strong>
+      <hr />
+      <ul class="video-list">
+        <li *ngFor="let i1 of user2List"><strong>Video: </strong>{{ i1 }}</li>
+      </ul>
+      <button
+        class="btn"
+        [ngClass]="subscribeMode2 ? 'btn-danger' : 'btn-success'"
+        (click)="user2Subscribe()"
+      >
+        {{ subscribeMode2 ? 'Unsubscribe' : 'Subscribe' }}
+      </button>
+    </div>
+    <div class="col-md-4">
+      <strong>User 3</strong>
+      <hr />
+      <ul class="video-list">
+        <li *ngFor="let i1 of user3List"><strong>Video: </strong>{{ i1 }}</li>
+      </ul>
+      <button
+        class="btn"
+        [ngClass]="subscribeMode3 ? 'btn-danger' : 'btn-success'"
+        (click)="user3Subscribe()"
+      >
+        {{ subscribeMode3 ? 'Unsubscribe' : 'Subscribe' }}
+      </button>
+    </div>
   </div>
 </div>
