@@ -10,6 +10,7 @@ import { MapComponent } from './observable/map/map.component';
 import { ObservableComponent } from './observable/observable.component';
 import { OfFromComponent } from './observable/of-from/of-from.component';
 import { PluckComponent } from './observable/pluck/pluck.component';
+import { ReplaySubjectComponent } from './observable/replay-subject/replay-subject.component';
 import { RetryComponent } from './observable/retry/retry.component';
 import { SubjectComponent } from './observable/subject/subject.component';
 import { TakeComponent } from './observable/take/take.component';
@@ -37,6 +38,7 @@ const routes: Routes = [
       { path: 'retry', component: RetryComponent },
       { path: 'debounce', component: DebounceTimeComponent },
       { path: 'subject', component: SubjectComponent },
+      { path: 'replaySubject', component: ReplaySubjectComponent },
     ],
   },
   { path: '**', redirectTo: 'observable' },
