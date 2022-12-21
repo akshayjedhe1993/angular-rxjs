@@ -22,6 +22,9 @@ import { RetryComponent } from './observable/retry/retry.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DebounceTimeComponent } from './observable/debounce-time/debounce-time.component';
 import { SubjectComponent } from './observable/subject/subject.component';
+import { Comp1Component } from './comps/comp1/comp1.component';
+import { Comp2Component } from './comps/comp2/comp2.component';
+import { Comp3Component } from './comps/comp3/comp3.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
@@ -44,6 +47,9 @@ import { SubjectComponent } from './observable/subject/subject.component';
     RetryComponent,
     DebounceTimeComponent,
     SubjectComponent,
+    Comp1Component,
+    Comp2Component,
+    Comp3Component,
   ],
   bootstrap: [AppComponent],
 })
