@@ -7,7 +7,7 @@ import { DesignUtilityService } from '../../appServices/design-utility.service';
   styleUrls: ['./comp1.component.css'],
 })
 export class Comp1Component implements OnInit {
-  username: string = 'Akshay';
+  username: string;
 
   constructor(private _designUtility: DesignUtilityService) {
     this._designUtility.userName.subscribe((res) => {
