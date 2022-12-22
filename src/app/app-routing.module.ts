@@ -44,7 +44,7 @@ const routes: Routes = [
       { path: 'replaySubject', component: ReplaySubjectComponent },
       { path: 'asyncSubject', component: AsyncSubjectComponent },
       { path: 'concat', component: ConcatComponent },
-      { path: 'Merge', component: MergeComponent },
+      { path: 'merge', component: MergeComponent },
     ],
   },
   { path: '**', redirectTo: 'observable' },
