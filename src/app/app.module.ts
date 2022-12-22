@@ -27,7 +27,8 @@ import { Comp2Component } from './comps/comp2/comp2.component';
 import { Comp3Component } from './comps/comp3/comp3.component';
 import { ReplaySubjectComponent } from './observable/replay-subject/replay-subject.component';
 import { AsyncSubjectComponent } from './observable/async-subject/async-subject.component';
-import { ConcatMergeComponent } from './observable/concat-merge/concat-merge.component';
+import { MergeComponent } from './observable/merge/merge.component';
+import { ConcatComponent } from './observable/concat/concat.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
@@ -55,7 +56,8 @@ import { ConcatMergeComponent } from './observable/concat-merge/concat-merge.com
     Comp3Component,
     ReplaySubjectComponent,
     AsyncSubjectComponent,
-    ConcatMergeComponent,
+    ConcatComponent,
+    MergeComponent,
   ],
   bootstrap: [AppComponent],
 })

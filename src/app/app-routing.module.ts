@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AsyncSubjectComponent } from './observable/async-subject/async-subject.component';
-import { ConcatMergeComponent } from './observable/concat-merge/concat-merge.component';
+import { ConcatComponent } from './observable/concat/concat.component';
 import { CustomComponent } from './observable/custom/custom.component';
 import { DebounceTimeComponent } from './observable/debounce-time/debounce-time.component';
 import { FilterComponent } from './observable/filter/filter.component';
@@ -9,6 +9,7 @@ import { FromEventComponent } from './observable/from-event/from-event.component
 import { IntervalComponent } from './observable/interval/interval.component';
 import { ListComponent } from './observable/list/list.component';
 import { MapComponent } from './observable/map/map.component';
+import { MergeComponent } from './observable/merge/merge.component';
 import { ObservableComponent } from './observable/observable.component';
 import { OfFromComponent } from './observable/of-from/of-from.component';
 import { PluckComponent } from './observable/pluck/pluck.component';
@@ -42,7 +43,8 @@ const routes: Routes = [
       { path: 'subject', component: SubjectComponent },
       { path: 'replaySubject', component: ReplaySubjectComponent },
       { path: 'asyncSubject', component: AsyncSubjectComponent },
-      { path: 'concatMerge', component: ConcatMergeComponent },
+      { path: 'concat', component: ConcatComponent },
+      { path: 'Merge', component: MergeComponent },
     ],
   },
   { path: '**', redirectTo: 'observable' },
