@@ -18,7 +18,7 @@ import { DesignUtilityService } from '../../appServices/design-utility.service';
 export class ExhaustMapComponent implements OnInit, AfterViewInit {
   url = 'https://rxjs-55c71-default-rtdb.firebaseio.com/exhaustMap.json';
   num = 0;
-  saveRequest;
+  saveRequest = 0;
   fetching = false;
 
   @ViewChild('btn') btn: ElementRef;
@@ -40,6 +40,7 @@ export class ExhaustMapComponent implements OnInit, AfterViewInit {
   }
 
   onFetch() {
+    // this.saveRequest++;
     this._http.get<any>(this.url).subscribe((res) => {
       this.saveRequest = res.data;
     });
