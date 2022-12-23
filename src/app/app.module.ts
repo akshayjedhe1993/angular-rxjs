@@ -30,6 +30,7 @@ import { AsyncSubjectComponent } from './observable/async-subject/async-subject.
 import { MergeComponent } from './observable/merge/merge.component';
 import { ConcatComponent } from './observable/concat/concat.component';
 import { MergeMapComponent } from './observable/merge-map/merge-map.component';
+import { ConcatMapComponent } from './observable/concat-map/concat-map.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
@@ -60,6 +61,7 @@ import { MergeMapComponent } from './observable/merge-map/merge-map.component';
     ConcatComponent,
     MergeComponent,
     MergeMapComponent,
+    ConcatMapComponent,
   ],
   bootstrap: [AppComponent],
 })
