@@ -59,7 +59,7 @@ ul.techList.completed li {
   font-size: 13px;
   line-height: normal;
 }
-.notification .header .item-img {
+.notification .item-img {
   float: right;
   margin: 0 0 0 10px;
   border: 1px solid #989898;
