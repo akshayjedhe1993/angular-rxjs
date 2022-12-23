@@ -6,6 +6,7 @@ import { ConcatMap2Component } from './observable/concat-map2/concat-map2.compon
 import { ConcatComponent } from './observable/concat/concat.component';
 import { CustomComponent } from './observable/custom/custom.component';
 import { DebounceTimeComponent } from './observable/debounce-time/debounce-time.component';
+import { ExhaustMapComponent } from './observable/exhaust-map/exhaust-map.component';
 import { FilterComponent } from './observable/filter/filter.component';
 import { FromEventComponent } from './observable/from-event/from-event.component';
 import { IntervalComponent } from './observable/interval/interval.component';
@@ -55,6 +56,7 @@ const routes: Routes = [
       { path: 'concatMap2', component: ConcatMap2Component },
       { path: 'switchMap', component: SwitchMapComponent },
       { path: 'switchMap2', component: SwitchMap2Component },
+      { path: 'exhaust', component: ExhaustMapComponent },
     ],
   },
   { path: '**', redirectTo: 'observable' },
