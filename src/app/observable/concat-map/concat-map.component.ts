@@ -30,6 +30,17 @@ export class ConcatMapComponent implements OnInit {
       this._du.print(res, 'elContainer2');
     });
 
+    //  Ex.* map + concatAll
+    source
+      .pipe(
+        map((res) => this.getData(res)),
+        concatAll()
+      )
+      .subscribe((res) => {
+        // console.log(res);
+        this._du.print(res, 'elContainer2');
+      });
+
     //  Ex.3 concatMap
     source.pipe(concatMap((res) => this.getData(res))).subscribe((res) => {
       // console.log(res);
