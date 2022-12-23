@@ -51,8 +51,6 @@ const firebaseConfig = {
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule,
   ],
   declarations: [
     AppComponent,
