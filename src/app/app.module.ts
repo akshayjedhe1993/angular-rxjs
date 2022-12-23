@@ -29,6 +29,7 @@ import { ReplaySubjectComponent } from './observable/replay-subject/replay-subje
 import { AsyncSubjectComponent } from './observable/async-subject/async-subject.component';
 import { MergeComponent } from './observable/merge/merge.component';
 import { ConcatComponent } from './observable/concat/concat.component';
+import { MergeMapComponent } from './observable/merge-map/merge-map.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
@@ -58,6 +59,7 @@ import { ConcatComponent } from './observable/concat/concat.component';
     AsyncSubjectComponent,
     ConcatComponent,
     MergeComponent,
+    MergeMapComponent,
   ],
   bootstrap: [AppComponent],
 })

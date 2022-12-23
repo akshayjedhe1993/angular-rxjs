@@ -9,6 +9,7 @@ import { FromEventComponent } from './observable/from-event/from-event.component
 import { IntervalComponent } from './observable/interval/interval.component';
 import { ListComponent } from './observable/list/list.component';
 import { MapComponent } from './observable/map/map.component';
+import { MergeMapComponent } from './observable/merge-map/merge-map.component';
 import { MergeComponent } from './observable/merge/merge.component';
 import { ObservableComponent } from './observable/observable.component';
 import { OfFromComponent } from './observable/of-from/of-from.component';
@@ -45,6 +46,7 @@ const routes: Routes = [
       { path: 'asyncSubject', component: AsyncSubjectComponent },
       { path: 'concat', component: ConcatComponent },
       { path: 'merge', component: MergeComponent },
+      { path: 'mergeMap', component: MergeMapComponent },
     ],
   },
   { path: '**', redirectTo: 'observable' },
