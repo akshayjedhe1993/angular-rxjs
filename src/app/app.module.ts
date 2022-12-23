@@ -36,8 +36,24 @@ import { SwitchMapComponent } from './observable/switch-map/switch-map.component
 import { SwitchMap2Component } from './observable/switch-map2/switch-map2.component';
 import { ExhaustMapComponent } from './observable/exhaust-map/exhaust-map.component';
 
+const firebaseConfig = {
+  apiKey: 'AIzaSyABNQdMjoPOBqtBI3FCivRJWP7FmMyObO0',
+  authDomain: 'rxjs-3c7e9.firebaseapp.com',
+  projectId: 'rxjs-3c7e9',
+  storageBucket: 'rxjs-3c7e9.appspot.com',
+  messagingSenderId: '321092698707',
+  appId: '1:321092698707:web:fdcd77fe6bda96ac5efca6',
+};
+
 @NgModule({
-  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+  ],
   declarations: [
     AppComponent,
     HeaderComponent,
