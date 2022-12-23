@@ -11,7 +11,7 @@ export class SearchService {
 
   constructor(private http: HttpClient) {}
 
-  getSearches(searchTerm): Observable<Search> {
-    return this.http.get<Search>(this.url + '?q=' + searchTerm);
+  getSearches(searchTerm): Observable<Search[]> {
+    return this.http.get<Search[]>(this.url + '?q=' + searchTerm);
   }
 }

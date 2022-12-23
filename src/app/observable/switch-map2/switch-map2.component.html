@@ -19,7 +19,7 @@
     <div class="d-flex">
       <h5>Search results</h5>
       <span class="ml-auto text-muted" style="margin-left: auto;">
-        5 results found..
+        {{ searchResultsCount }} results found..
       </span>
     </div>
     <table class="table">
@@ -31,8 +31,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of searchResults; index as i">
-          <th scope="row">{{i}}</th>
+        <tr *ngFor="let item of searchResults; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
           <td>
             <img src="{{ item.thumbnailUrl }}" width="120" />
           </td>

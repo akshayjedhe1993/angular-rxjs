@@ -7,6 +7,7 @@ import {
   pluck,
   concatMap,
   switchMap,
+  filter,
 } from 'rxjs/operators';
 import { Search } from '../../appInterface/search';
 import { SearchService } from '../../appServices/search.service';
@@ -18,7 +19,8 @@ import { SearchService } from '../../appServices/search.service';
 })
 export class SwitchMap2Component implements AfterViewInit {
   @ViewChild('searchForm') searchForm: NgForm;
-  searchResults: Search;
+  searchResults: Search[];
+  searchResultsCount = 0;
   constructor(private _searchService: SearchService) {}
 
   ngAfterViewInit() {
@@ -26,6 +28,7 @@ export class SwitchMap2Component implements AfterViewInit {
 
     formValue
       .pipe(
+        filter(() => this.searchForm.valid),
         // map(data => data['searchTerm'])
         pluck('searchTerm'),
         debounceTime(5000),
@@ -35,6 +38,7 @@ export class SwitchMap2Component implements AfterViewInit {
       .subscribe((res) => {
         console.log(res);
         this.searchResults = res;
+        this.searchResultsCount = res.length;
       });
   }
 }
