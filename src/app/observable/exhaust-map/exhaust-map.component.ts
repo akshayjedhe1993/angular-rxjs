@@ -6,7 +6,7 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { fromEvent } from 'rxjs';
+import { exhaustMap, fromEvent } from 'rxjs';
 import { concatMap, tap } from 'rxjs/operators';
 import { DesignUtilityService } from '../../appServices/design-utility.service';
 
@@ -31,7 +31,7 @@ export class ExhaustMapComponent implements OnInit, AfterViewInit {
     fromEvent(this.btn.nativeElement, 'click')
       .pipe(
         tap(() => (this.fetching = true)),
-        concatMap(() => this.onSave(this.onSave(this.num++)))
+        exhaustMap(() => this.onSave(this.onSave(this.num++)))
       )
       .subscribe((res) => {
         this.onFetch();
