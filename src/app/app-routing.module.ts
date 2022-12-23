@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AsyncSubjectComponent } from './observable/async-subject/async-subject.component';
 import { ConcatMapComponent } from './observable/concat-map/concat-map.component';
+import { ConcatMap2Component } from './observable/concat-map2/concat-map2.component';
 import { ConcatComponent } from './observable/concat/concat.component';
 import { CustomComponent } from './observable/custom/custom.component';
 import { DebounceTimeComponent } from './observable/debounce-time/debounce-time.component';
@@ -49,6 +50,7 @@ const routes: Routes = [
       { path: 'merge', component: MergeComponent },
       { path: 'mergeMap', component: MergeMapComponent },
       { path: 'concatMap', component: ConcatMapComponent },
+      { path: 'concatMap2', component: ConcatMap2Component },
     ],
   },
   { path: '**', redirectTo: 'observable' },

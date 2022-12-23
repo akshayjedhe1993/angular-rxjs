@@ -31,6 +31,7 @@ import { MergeComponent } from './observable/merge/merge.component';
 import { ConcatComponent } from './observable/concat/concat.component';
 import { MergeMapComponent } from './observable/merge-map/merge-map.component';
 import { ConcatMapComponent } from './observable/concat-map/concat-map.component';
+import { ConcatMap2Component } from './observable/concat-map2/concat-map2.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
@@ -62,6 +63,7 @@ import { ConcatMapComponent } from './observable/concat-map/concat-map.component
     MergeComponent,
     MergeMapComponent,
     ConcatMapComponent,
+    ConcatMap2Component,
   ],
   bootstrap: [AppComponent],
 })
