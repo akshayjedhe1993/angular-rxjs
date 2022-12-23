@@ -20,6 +20,7 @@ import { ReplaySubjectComponent } from './observable/replay-subject/replay-subje
 import { RetryComponent } from './observable/retry/retry.component';
 import { SubjectComponent } from './observable/subject/subject.component';
 import { SwitchMapComponent } from './observable/switch-map/switch-map.component';
+import { SwitchMap2Component } from './observable/switch-map2/switch-map2.component';
 import { TakeComponent } from './observable/take/take.component';
 import { TapComponent } from './observable/tap/tap.component';
 import { ToArrayComponent } from './observable/to-array/to-array.component';
@@ -53,6 +54,7 @@ const routes: Routes = [
       { path: 'concatMap', component: ConcatMapComponent },
       { path: 'concatMap2', component: ConcatMap2Component },
       { path: 'switchMap', component: SwitchMapComponent },
+      { path: 'switchMap2', component: SwitchMap2Component },
     ],
   },
   { path: '**', redirectTo: 'observable' },
