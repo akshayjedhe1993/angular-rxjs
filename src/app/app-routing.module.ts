@@ -19,6 +19,7 @@ import { OfFromComponent } from './observable/of-from/of-from.component';
 import { PluckComponent } from './observable/pluck/pluck.component';
 import { ReplaySubjectComponent } from './observable/replay-subject/replay-subject.component';
 import { RetryComponent } from './observable/retry/retry.component';
+import { ShareReplayComponent } from './observable/share-replay/share-replay.component';
 import { SubjectComponent } from './observable/subject/subject.component';
 import { SwitchMapComponent } from './observable/switch-map/switch-map.component';
 import { SwitchMap2Component } from './observable/switch-map2/switch-map2.component';
@@ -57,6 +58,7 @@ const routes: Routes = [
       { path: 'switchMap', component: SwitchMapComponent },
       { path: 'switchMap2', component: SwitchMap2Component },
       { path: 'exhaust', component: ExhaustMapComponent },
+      { path: 'shareReplay', component: ShareReplayComponent },
     ],
   },
   { path: '**', redirectTo: 'observable' },
