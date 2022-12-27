@@ -64,3 +64,46 @@ ul.techList.completed li {
   margin: 0 0 0 10px;
   border: 1px solid #989898;
 }
+
+.wrapper .red {
+  background-color: red;
+  display: inline-block;
+  padding: 5px;
+  margin: 2px;
+  vertical-align: middle;
+}
+.wrapper .green {
+  background-color: green;
+  display: inline-block;
+  padding: 5px;
+  margin: 2px;
+  vertical-align: middle;
+}
+.wrapper .blue {
+  background-color: blue;
+  display: inline-block;
+  padding: 5px;
+  margin: 2px;
+  vertical-align: middle;
+}
+.wrapper .yellow {
+  background-color: yellow;
+  display: inline-block;
+  padding: 5px;
+  margin: 2px;
+  vertical-align: middle;
+}
+.wrapper .violet {
+  background-color: violet;
+  display: inline-block;
+  padding: 5px;
+  margin: 2px;
+  vertical-align: middle;
+}
+.wrapper .purple {
+  background-color: purple;
+  display: inline-block;
+  padding: 5px;
+  margin: 2px;
+  vertical-align: middle;
+}
