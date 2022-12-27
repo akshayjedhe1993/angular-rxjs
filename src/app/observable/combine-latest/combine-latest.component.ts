@@ -31,7 +31,7 @@ export class CombineLatestComponent implements AfterViewInit {
       this.createBox(name, color, 'elContainer1');
     });
 
-    //  Ex.1 WithLatestFrom
+    //  Ex.2 WithLatestFrom
     //  master -> nameObs
     //  slave -> colorObs
     nameObs.pipe(withLatestFrom(colorObs)).subscribe(([name, color]) => {
