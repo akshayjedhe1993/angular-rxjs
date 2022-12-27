@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
-import { combineLatest, fromEvent } from 'rxjs';
-import { map, pluck, withLatestFrom } from 'rxjs/operators';
+import { forkJoin, fromEvent, zip } from 'rxjs';
+import { map, pluck, take, withLatestFrom } from 'rxjs/operators';
 
 @Component({
   selector: 'app-zip',
@@ -18,23 +18,23 @@ export class ZipComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     const nameObs = fromEvent<any>(this.name.nativeElement, 'change').pipe(
-      map((event) => event.target.value)
+      map((event) => event.target.value),
+      take(4)
     );
 
     const colorObs = fromEvent<any>(this.color.nativeElement, 'change').pipe(
-      pluck('target', 'value')
+      pluck('target', 'value'),
+      take(3)
     );
 
-    //  Ex.1 combineLatest
-    combineLatest(nameObs, colorObs).subscribe(([name, color]) => {
+    //  Ex.1 zip
+    zip(nameObs, colorObs).subscribe(([name, color]) => {
       // console.log(name, color);
       this.createBox(name, color, 'elContainer1');
     });
 
-    //  Ex.2 WithLatestFrom
-    //  master -> nameObs
-    //  slave -> colorObs
-    nameObs.pipe(withLatestFrom(colorObs)).subscribe(([name, color]) => {
+    //  Ex.2 forkJoin
+    forkJoin(nameObs, colorObs).subscribe(([name, color]) => {
       // console.log(name, color);
       this.createBox(name, color, 'elContainer2');
     });
