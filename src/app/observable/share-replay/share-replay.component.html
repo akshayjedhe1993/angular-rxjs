@@ -6,8 +6,8 @@
       <h4>Album 1</h4>
       <hr />
       <div class="row">
-        <div class="col-md-6">
-          <div class="card" *ngFor="let i of album1 | async">
+        <div class="col-md-6 p-2" *ngFor="let i of album1 | async">
+          <div class="card">
             <img src="{{ i.url }}" class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">
@@ -26,8 +26,8 @@
       <h4>Album 2</h4>
       <hr />
       <div class="row">
-        <div class="col-md-6">
-          <div class="card" *ngFor="let i of album2 | async">
+        <div class="col-md-6 p-2" *ngFor="let i of album2 | async">
+          <div class="card">
             <img src="{{ i.url }}" class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">
@@ -46,8 +46,8 @@
   <div class="row">
     <h4>All Data</h4>
     <hr />
-    <div class="col-md-3">
-      <div class="card" *ngFor="let i of allData | async">
+    <div class="col-md-3 p-2" *ngFor="let i of allData | async">
+      <div class="card">
         <img src="{{ i.url }}" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title">Album ID: {{ i.albumId }} ID: {{ i.id }}</h5>
