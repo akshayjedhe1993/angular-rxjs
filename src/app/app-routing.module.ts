@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AsyncSubjectComponent } from './observable/async-subject/async-subject.component';
+import { CombineLatestComponent } from './observable/combine-latest/combine-latest.component';
 import { ConcatMapComponent } from './observable/concat-map/concat-map.component';
 import { ConcatMap2Component } from './observable/concat-map2/concat-map2.component';
 import { ConcatComponent } from './observable/concat/concat.component';
@@ -59,6 +60,7 @@ const routes: Routes = [
       { path: 'switchMap2', component: SwitchMap2Component },
       { path: 'exhaust', component: ExhaustMapComponent },
       { path: 'shareReplay', component: ShareReplayComponent },
+      { path: 'combineLatest', component: CombineLatestComponent },
     ],
   },
   { path: '**', redirectTo: 'observable' },
