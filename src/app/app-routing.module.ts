@@ -27,6 +27,7 @@ import { SwitchMap2Component } from './observable/switch-map2/switch-map2.compon
 import { TakeComponent } from './observable/take/take.component';
 import { TapComponent } from './observable/tap/tap.component';
 import { ToArrayComponent } from './observable/to-array/to-array.component';
+import { ZipComponent } from './observable/zip/zip.component';
 import { PromiseComponent } from './promise/promise.component';
 
 const routes: Routes = [
@@ -61,6 +62,7 @@ const routes: Routes = [
       { path: 'exhaust', component: ExhaustMapComponent },
       { path: 'shareReplay', component: ShareReplayComponent },
       { path: 'combineLatest', component: CombineLatestComponent },
+      { path: 'zip', component: ZipComponent },
     ],
   },
   { path: '**', redirectTo: 'observable' },

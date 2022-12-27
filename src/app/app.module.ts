@@ -37,6 +37,7 @@ import { SwitchMap2Component } from './observable/switch-map2/switch-map2.compon
 import { ExhaustMapComponent } from './observable/exhaust-map/exhaust-map.component';
 import { ShareReplayComponent } from './observable/share-replay/share-replay.component';
 import { CombineLatestComponent } from './observable/combine-latest/combine-latest.component';
+import { ZipComponent } from './observable/zip/zip.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
@@ -74,6 +75,7 @@ import { CombineLatestComponent } from './observable/combine-latest/combine-late
     ExhaustMapComponent,
     ShareReplayComponent,
     CombineLatestComponent,
+    ZipComponent,
   ],
   bootstrap: [AppComponent],
 })
